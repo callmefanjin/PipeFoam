@@ -1,0 +1,8 @@
+#!/bin/sh
+cd "${0%/*}" || exit
+[ -n "${WM_PROJECT_DIR:-}" ] || {
+    echo "Error: source OpenFOAM v2406 first, e.g." >&2
+    echo "  source /usr/lib/openfoam/openfoam2406/etc/bashrc" >&2
+    exit 1
+}
+wmake
